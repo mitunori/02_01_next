@@ -3,11 +3,17 @@ import Header from "@/components/Header";
 import styles from "../styles/style.module.scss";
 import Timeline from "@/components/Timeline";
 import Post from "@/components/Post";
-import Button from "@/components/Button";
 import { useEffect, useState } from "react";
 
+type Post = {
+  id: number;
+  name: string;
+  date: string;
+  content: string;
+};
+
 // MEMO: データベースから取得しているイメージです🤗（API）
-const dummyData: any = [
+const dummyData: Post[] = [
   {
     id: 1,
     name: "山田 太郎",
@@ -42,14 +48,13 @@ const dummyData: any = [
 
 export default function Home() {
   // useStateを貼り付けてください🤗
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   // useEffectの処理=画面が表示された直後に１度実行されます🤗
   useEffect(() => {
     // ここに書く
 
     setPosts(dummyData);
-    console.log(11111111);
     // ここの下消さない
   }, []);
 

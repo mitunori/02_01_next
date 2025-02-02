@@ -10,7 +10,7 @@ const Test = styled.div<{ textColor: string; bg: string }>`
   background: ${(props) => props.bg};
 `;
 
-const Button = ({ bg, textColor }) => {
+const Button = ({ bg = "white", textColor = "black" }) => {
   return (
     <Test textColor={textColor} bg={bg}>
       Button
